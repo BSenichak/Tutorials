@@ -44,7 +44,7 @@ export default function StartPage() {
     return (
         <Wrapper>
             <Poster>
-                <Img src="./src/images/web_programing.png" alt="poster" />
+                <Img src="images/web_programing.png" alt="poster" />
                 <Text>
                     <h1>
                         Ця сторінка є допоміжним проєктом для напрямку Web в
