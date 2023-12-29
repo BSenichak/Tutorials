@@ -1,9 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
-
 const firebaseConfig = {
-    apiKey: "AIzaSyAbZ-Pu53O_-GXitrdChDwwR7e0yJnWNWI",
+    apiKey: import.meta.env.VITE_API_KEY,
     authDomain: "webtutorials-f1d19.firebaseapp.com",
     projectId: "webtutorials-f1d19",
     storageBucket: "webtutorials-f1d19.appspot.com",
