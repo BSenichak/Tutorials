@@ -63,7 +63,7 @@ export default function StartPage() {
             </Poster>
             <Curses>
                 <Curse
-                    to={"/beginer"}
+                    to={"/beginner"}
                     style={{
                         background:
                             "linear-gradient(to right, blue, rgb(119, 119, 248))",

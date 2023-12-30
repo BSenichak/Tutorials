@@ -21,7 +21,7 @@ export default function Footer() {
     );
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.footer`
     background: linear-gradient(
         to right,
         ${(p) => p.theme.primary100},

@@ -8,6 +8,8 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import { Route, Routes } from "react-router-dom";
 import StartPage from "./components/StartPage/StartPage";
+import NotFound from "./components/NotFound";
+import Beginner from "./components/curses/beginner/Beginner";
 
 const App = styled.div`
     background: ${(props) => props.theme.bg100};
@@ -31,6 +33,8 @@ export default (props) => {
                 <Main>
                     <Routes>
                         <Route path="/" element={<StartPage />} />
+                        <Route path="/*" element={<NotFound />} />
+                        <Route path="/beginner/*" element={<Beginner />} />
                     </Routes>
                 </Main>
                 <Footer />
@@ -39,7 +43,7 @@ export default (props) => {
     );
 };
 
-const Main = styled.footer`
+const Main = styled.main`
     min-height: 80vh;
     max-width: 1024px;
     margin: 1rem auto;
