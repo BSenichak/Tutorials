@@ -5,6 +5,7 @@ import NotFound from "../../NotFound";
 import Wb1 from "./Wb1";
 import Wb2 from "./Wb2";
 import Wb3 from "./Wb3";
+import Wb4 from "./Wb4";
 
 export default function Beginner() {
     let lessons = [
@@ -27,6 +28,8 @@ export default function Beginner() {
         {
             number: 4,
             name: "Графіка зображення",
+            element: <Wb4 />,
+
         },
         {
             number: 5,
