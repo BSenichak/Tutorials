@@ -4,6 +4,7 @@ import styled from "styled-components";
 import NotFound from "../../NotFound";
 import Wb1 from "./Wb1";
 import Wb2 from "./Wb2";
+import Wb3 from "./Wb3";
 
 export default function Beginner() {
     let lessons = [
@@ -20,6 +21,8 @@ export default function Beginner() {
         {
             number: 3,
             name: "Списки",
+            element: <Wb3 />,
+
         },
         {
             number: 4,

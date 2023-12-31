@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
 const Tag = ({ tag, utag, pair = true, attrs, children, ...props }) => {
     const Tag = tag || "span";
@@ -23,13 +22,6 @@ const Tag = ({ tag, utag, pair = true, attrs, children, ...props }) => {
             )}
         </Tag>
     );
-};
-
-Tag.PropTypes = {
-    tag: PropTypes.string,
-    utag: PropTypes.string,
-    pair: PropTypes.bool,
-    attrs: PropTypes.string,
 };
 
 export default styled(Tag)`
