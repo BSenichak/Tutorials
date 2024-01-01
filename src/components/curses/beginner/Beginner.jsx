@@ -6,6 +6,7 @@ import Wb1 from "./Wb1";
 import Wb2 from "./Wb2";
 import Wb3 from "./Wb3";
 import Wb4 from "./Wb4";
+import Wb5 from "./Wb5";
 
 export default function Beginner() {
     let lessons = [
@@ -34,6 +35,8 @@ export default function Beginner() {
         {
             number: 5,
             name: "Таблиці",
+            element: <Wb5 />,
+
         },
         {
             number: 6,

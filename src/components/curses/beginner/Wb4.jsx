@@ -18,7 +18,7 @@ export default function Wb1() {
     let [img2, setImg2] = useState(100);
     return (
         <Wrapper>
-            <Title>3. Списки</Title>
+            <Title>4. Графіка і зображення</Title>
             <Start>
                 <img src="/images/simpsom.gif" alt="web structure" />
                 <p>
@@ -199,6 +199,11 @@ export default function Wb1() {
                 </Images>
                 Тут явно помітно як спотворюється растрове зображення при
                 збільшенні його розміру
+            </div>
+            <h3>Анімовані зображення GIF</h3>
+            <div style={{ display: "flex", gap: "2rem" }}>
+                <img src="/images/simpsom.gif" alt="gif" />
+                <p>Так гіфки також можна добавляти на сторінку, вони також можуть бути з прозорим фоном</p>
             </div>
         </Wrapper>
     );
