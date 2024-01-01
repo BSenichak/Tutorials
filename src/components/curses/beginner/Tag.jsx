@@ -17,7 +17,7 @@ const Tag = ({ tag, utag, pair = true, attrs, children, ...props }) => {
                 </>
             ) : (
                 <Wrapper>
-                    &lt;{tag || utag} {attrs}/&gt;
+                    &lt;{tag || utag} <Attr>{attrs}</Attr>/&gt;
                 </Wrapper>
             )}
         </Tag>
