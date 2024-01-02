@@ -27,6 +27,35 @@ export default function Wb1() {
         </html>
       `
     );
+    let [html1, setHtml1] = useState(
+        `<h1>
+    <a href="http://google.com">link</a> <br /><a href="index.html">link</a>
+</h1>
+<ul>
+    <li>1 item</li>
+    <li>2 item</li>
+    <li>3 item</li>
+</ul>
+<input type="checkbox" name="" id="a">
+<label for="a">checkbox</label>
+      `
+    );
+    let [css1, setCss1] = useState(
+        `h1 a[href^="http://"]
+{
+    color: pink;
+}
+ul > li:hover {
+    color: red;
+}
+input[type="checkbox"]:checked + label{
+    color: green;
+}
+label::after {
+    content: "😯";
+}
+      `
+    );
     return (
         <Wrapper>
             <Title>7. CSS: Вступ, селектори</Title>
@@ -293,23 +322,188 @@ export default function Wb1() {
                 <h3>Селектор атрибутів</h3>
                 <div>
                     <Css selector="[class]" styles={[["color", "red"]]} />
-                    Змінить колір всіх елементів які мають атрибут <Code>class</Code>
-                    <Css selector={`[href="https://www.example.com"]`} styles={[["color", "red"]]} />
-                    Змінить колір всіх елементів які мають атрибут <Code>href</Code> з значенням <Code>https://www.example.com</Code>
-                    <Css selector={`[src^="images/"]`} styles={[["color", "red"]]} />
-                    Змінить колір всіх елементів які мають атрибут <Code>src</Code> з значенням яке починається з <Code>images/</Code>
-                    <Css selector={`[src$=".jpg"]`} styles={[["color", "red"]]} />
-                    Змінить колір всіх елементів які мають атрибут <Code>src</Code> з значенням яке закінчується на <Code>.jpg</Code>
-                    <Css selector={`[src*="logo"]`} styles={[["color", "red"]]} />
-                    Змінить колір всіх елементів які мають атрибут <Code>src</Code> з значенням яке містить частину <Code>logo</Code>
-                    <Css selector={`[lang="en" i]`} styles={[["color", "red"]]} />
-                    Змінить колір всіх елементів які мають атрибут <Code>lang</Code> з значенням <Code>en</Code> або <Code>EN</Code> або <Code>En</Code>
+                    Змінить колір всіх елементів які мають атрибут{" "}
+                    <Code>class</Code>
+                    <Css
+                        selector={`[href="https://www.example.com"]`}
+                        styles={[["color", "red"]]}
+                    />
+                    Змінить колір всіх елементів які мають атрибут{" "}
+                    <Code>href</Code> з значенням{" "}
+                    <Code>https://www.example.com</Code>
+                    <Css
+                        selector={`[src^="images/"]`}
+                        styles={[["color", "red"]]}
+                    />
+                    Змінить колір всіх елементів які мають атрибут{" "}
+                    <Code>src</Code> з значенням яке починається з{" "}
+                    <Code>images/</Code>
+                    <Css
+                        selector={`[src$=".jpg"]`}
+                        styles={[["color", "red"]]}
+                    />
+                    Змінить колір всіх елементів які мають атрибут{" "}
+                    <Code>src</Code> з значенням яке закінчується на{" "}
+                    <Code>.jpg</Code>
+                    <Css
+                        selector={`[src*="logo"]`}
+                        styles={[["color", "red"]]}
+                    />
+                    Змінить колір всіх елементів які мають атрибут{" "}
+                    <Code>src</Code> з значенням яке містить частину{" "}
+                    <Code>logo</Code>
+                    <Css
+                        selector={`[lang="en" i]`}
+                        styles={[["color", "red"]]}
+                    />
+                    Змінить колір всіх елементів які мають атрибут{" "}
+                    <Code>lang</Code> з значенням <Code>en</Code> або{" "}
+                    <Code>EN</Code> або <Code>En</Code>
                 </div>
             </div>
             <h2>Плевдокласи</h2>
             <div>
-                Comming soon...
+                Псевдоклас у CSS - це ключове слово, додане до селектора, яке
+                визначає його особливий стан.
+                <h3>
+                    <Code>:hover</Code>
+                </h3>
+                <div>
+                    <Css selector="h1:hover" styles={[["color", "red"]]} />
+                    Змінить колір заголовка коли користувач наведе на елемет
+                    мишею
+                    <br />
+                </div>
+                <br />
+                <h3>
+                    <Code>:focus</Code>
+                </h3>
+                <div>
+                    <Css selector="input:focus" styles={[["color", "red"]]} />
+                    Змінить колір тексту коли користувач поставить курсор в поле
+                    введення тексту
+                    <br />
+                </div>
+                <br />
+                <h3>
+                    <Code>:enabled</Code>
+                </h3>
+                <div>
+                    <Css
+                        selector="button:enabled"
+                        styles={[["color", "red"]]}
+                    />
+                    Змінить колір тексту в кнопці якщо кнопка доступна до
+                    натискання
+                    <br />
+                </div>
+                <br />
+                <h3>
+                    <Code>:disabled</Code>
+                </h3>
+                <div>
+                    <Css
+                        selector="button:disabled"
+                        styles={[["color", "red"]]}
+                    />
+                    Змінить колір тексту в кнопці якщо кнопка не доступна до
+                    натискання
+                    <br />
+                </div>
+                <br />
+                <h3>
+                    <Code>:checked</Code>
+                </h3>
+                <div>
+                    <Css
+                        selector={`input[type="chekbox"]:checked`}
+                        styles={[["background-color", "red"]]}
+                    />
+                    Змінить колір фону в прапорці якщо він буде обраний
+                    <br />
+                </div>
+                <br />
+                <h3>
+                    <Code>:nth-child()</Code>
+                </h3>
+                <div>
+                    <Css
+                        selector={`a:nth-child(2n)`}
+                        styles={[["background-color", "red"]]}
+                    />
+                    Змінить колір фону в кожного другого посилання (замість{" "}
+                    <Code>n</Code> підставляються числа по порядку)
+                    <br />
+                </div>
+                <br />
+                <h3>
+                    <Code>:visited</Code>
+                </h3>
+                <div>
+                    <Css
+                        selector={`a:visited`}
+                        styles={[["background-color", "red"]]}
+                    />
+                    Змінить колір фону в кожного посилання яке користувач вже
+                    відвідав
+                    <br />
+                </div>
+                <br />
             </div>
+            <h2>Плевдоелементи</h2>
+            <div>
+                Псевдоелемент у CSS — це ключове слово, яке додається до
+                селектора, яке дозволяє стилізувати певну частину вибраного
+                елемента.
+                <h3>
+                    <Code>::after</Code>
+                </h3>
+                <div>
+                    <Css selector="h1::after" styles={[["content", "😊"]]} />
+                    Вставить після заголовка смайлик (не є новим елементом)
+                    <br />
+                </div>
+                <br />
+                <h3>
+                    <Code>::before</Code>
+                </h3>
+                <div>
+                    <Css selector="h1::before" styles={[["content", "😊"]]} />
+                    Вставить перед заголовком смайлик (не є новим елементом)
+                    <br />
+                </div>
+                <br />
+                <h3>
+                    <Code>::first-letter</Code>
+                </h3>
+                <div>
+                    <Css
+                        selector="p::first-letter"
+                        styles={[["font-size", "20px"]]}
+                    />
+                    Змінить розмір першої букви в параграфі на велику
+                    <br />
+                </div>
+                <br />
+            </div>
+            <Hsr>
+                <CodeEditor
+                    value={html1}
+                    language="html"
+                    style={{ fontSize: "1rem" }}
+                    onChange={(e) => setHtml1(e.target.value)}
+                />
+                <CodeEditor
+                    value={css1}
+                    language="css"
+                    style={{ fontSize: "1rem" }}
+                    onChange={(e) => setCss1(e.target.value)}
+                />
+                <Result
+                    srcDoc={"<style>" + css1 + "</style>" + html1}
+                    className="result"
+                ></Result>
+            </Hsr>
         </Wrapper>
     );
 }
