@@ -9,6 +9,7 @@ import Wb4 from "./Wb4";
 import Wb5 from "./Wb5";
 import Wb6 from "./Wb6";
 import Wb7 from "./Wb7";
+import Wb8 from "./Wb8";
 
 export default function Beginner() {
     let lessons = [
@@ -55,7 +56,7 @@ export default function Beginner() {
         {
             number: 8,
             name: "CSS: Кольори, шрифти",
-            element: <Wb7 />,
+            element: <Wb8 />,
 
         },
         {

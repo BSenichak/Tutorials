@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import CodeEditor from "@uiw/react-textarea-code-editor";
 import Tag from "./Tag";
-import { Css, CssProperty } from "./Css";
+import { Css } from "./Css";
 
 export default function Wb1() {
     let [code1, setCode1] = useState(
