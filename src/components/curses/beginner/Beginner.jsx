@@ -8,6 +8,7 @@ import Wb3 from "./Wb3";
 import Wb4 from "./Wb4";
 import Wb5 from "./Wb5";
 import Wb6 from "./Wb6";
+import Wb7 from "./Wb7";
 
 export default function Beginner() {
     let lessons = [
@@ -47,34 +48,42 @@ export default function Beginner() {
         },
         {
             number: 7,
-            name: "Каскадні таблиці стилів",
+            name: "CSS: Вступ, селектори",
+            element: <Wb7 />,
+
         },
         {
             number: 8,
-            name: "Блочна модель",
+            name: "CSS: Кольори, шрифти",
+            element: <Wb7 />,
+
         },
         {
             number: 9,
-            name: "Позиціювання елементів",
+            name: "Блочна модель",
         },
         {
             number: 10,
-            name: "Закріплення знань",
+            name: "Позиціювання елементів",
         },
         {
             number: 11,
-            name: "HTML-сайт шапка",
+            name: "Закріплення знань",
         },
         {
             number: 12,
-            name: "HTML-сайт навігація",
+            name: "HTML-сайт шапка",
         },
         {
             number: 13,
-            name: "HTML-сайт основна частина",
+            name: "HTML-сайт навігація",
         },
         {
             number: 14,
+            name: "HTML-сайт основна частина",
+        },
+        {
+            number: 15,
             name: "HTML-сайт завершення, хостинг",
         },
     ];
