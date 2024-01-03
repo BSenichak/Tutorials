@@ -10,6 +10,7 @@ import { Route, Routes } from "react-router-dom";
 import StartPage from "./components/StartPage/StartPage";
 import NotFound from "./components/NotFound";
 import Beginner from "./components/curses/beginner/Beginner";
+import { AnimatePresence } from "framer-motion";
 
 const App = styled.div`
     background: ${(props) => props.theme.bg100};
@@ -31,11 +32,13 @@ export default (props) => {
             <App>
                 <Header />
                 <Main>
-                    <Routes>
-                        <Route path="/" element={<StartPage />} />
-                        <Route path="/*" element={<NotFound />} />
-                        <Route path="/beginner/*" element={<Beginner />} />
-                    </Routes>
+                    <AnimatePresence>
+                        <Routes>
+                            <Route path="/" element={<StartPage />} />
+                            <Route path="/*" element={<NotFound />} />
+                            <Route path="/beginner/*" element={<Beginner />} />
+                        </Routes>
+                    </AnimatePresence>
                 </Main>
                 <Footer />
             </App>

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import CodeEditor from "@uiw/react-textarea-code-editor";
 import Tag from "./Tag";
 import { Css } from "./Css";
+import { motion } from "framer-motion";
 
 export default function Wb1() {
     let [code1, setCode1] = useState(
@@ -57,7 +58,11 @@ label::after {
       `
     );
     return (
-        <Wrapper>
+        <Wrapper
+            initial={{ opacity: 0, x: "-100%" }}
+            animate={{ opacity: 1, x: "0" }}
+            transition={{ duration: 0.5 }}
+        >
             <Title>7. CSS: Вступ, селектори</Title>
             <Start>
                 <img src="/images/css.gif" alt="web structure" />
@@ -508,7 +513,7 @@ label::after {
     );
 }
 
-let Wrapper = styled.div`
+let Wrapper = styled(motion.div)`
     display: flex;
     flex-direction: column;
     gap: 1rem;

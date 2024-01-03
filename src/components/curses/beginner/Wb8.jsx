@@ -3,6 +3,8 @@ import styled from "styled-components";
 import CodeEditor from "@uiw/react-textarea-code-editor";
 import { Css, CssProperty } from "./Css";
 import Tag from "./Tag";
+import { motion } from "framer-motion";
+
 
 export default function Wb1() {
     let [html1, setHtml1] =
@@ -26,8 +28,7 @@ export default function Wb1() {
     .gradient {
         background-image: linear-gradient(45deg, red 20%, blue);
     }`);
-    let [html2, setHtml2] =
-        useState(`<p>Lorem ipsum dolor sit amet.</p>
+    let [html2, setHtml2] = useState(`<p>Lorem ipsum dolor sit amet.</p>
 <h2>Lorem ipsum dolor sit amet.</h2>`);
     let [css2, setCss2] = useState(`p {
     font-family: "main", cursive;
@@ -41,7 +42,11 @@ h2 {
     text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
 }`);
     return (
-        <Wrapper>
+        <Wrapper
+            initial={{ opacity: 0, x: "-100%" }}
+            animate={{ opacity: 1, x: "0" }}
+            transition={{ duration: 0.5 }}
+        >
             <Title>8. CSS: Кольори, шрифти</Title>
             <Start>
                 <img src="/images/colors.gif" alt="web structure" />
@@ -391,7 +396,7 @@ h2 {
     );
 }
 
-let Wrapper = styled.div`
+let Wrapper = styled(motion.div)`
     display: flex;
     flex-direction: column;
     gap: 1rem;

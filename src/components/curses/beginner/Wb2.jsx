@@ -2,10 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import CodeEditor from "@uiw/react-textarea-code-editor";
 import Tag from "./Tag";
+import { motion } from "framer-motion";
 
 export default function Wb1() {
     return (
-        <Wrapper>
+        <Wrapper
+            initial={{ opacity: 0, x: "-100%" }}
+            animate={{ opacity: 1, x: "0" }}
+            transition={{ duration: 0.5 }}
+        >
             <Title>2. Гіперпосилання</Title>
             <Start>
                 <img src="/images/giphy.gif" alt="web structure" />
@@ -107,17 +112,34 @@ export default function Wb1() {
                 <li>
                     <Tag utag={"a"} attrs={`href="index.html"`} /> - Це
                     посилання на інші веб-сторінки чи джерела, які знаходяться
-                    на данному компютері чи сервері. Якщо файл знаходиться в папці з цим файлом то просто пишеться просто назва, якщо в папці є ще одна папка а в ній вже файл то посилання пишеться так <Tag utag={"a"} attrs={`href="folder/index.html"`} />. Якщо файл знаходиться в папці яка знаходиться на одну папку раніше потрібно додати <Code>../</Code>, наприклад так <Tag utag={"a"} attrs={`href="../index.html"`} />
+                    на данному компютері чи сервері. Якщо файл знаходиться в
+                    папці з цим файлом то просто пишеться просто назва, якщо в
+                    папці є ще одна папка а в ній вже файл то посилання пишеться
+                    так <Tag utag={"a"} attrs={`href="folder/index.html"`} />.
+                    Якщо файл знаходиться в папці яка знаходиться на одну папку
+                    раніше потрібно додати <Code>../</Code>, наприклад так{" "}
+                    <Tag utag={"a"} attrs={`href="../index.html"`} />
                 </li>
                 <li>
-                    <Tag utag={"a"} attrs={`#text"`} /> - Це якір який посилається на тег який знаходиться на сторінці і має атрибут <Code>id</Code>, наприклад якір: <Tag utag={"h2"} attrs={`id="anchor"`}>Якийсь заголовок</Tag> і посилання на нього <Tag utag={"a"} attrs={`href="#anchor"`}>посилання на заголовок</Tag>, можна навіть якір на іншу сторінку і певний тег ось так <Tag utag={"a"} attrs={`href="about.html#anchor"`}></Tag>
+                    <Tag utag={"a"} attrs={`#text"`} /> - Це якір який
+                    посилається на тег який знаходиться на сторінці і має
+                    атрибут <Code>id</Code>, наприклад якір:{" "}
+                    <Tag utag={"h2"} attrs={`id="anchor"`}>
+                        Якийсь заголовок
+                    </Tag>{" "}
+                    і посилання на нього{" "}
+                    <Tag utag={"a"} attrs={`href="#anchor"`}>
+                        посилання на заголовок
+                    </Tag>
+                    , можна навіть якір на іншу сторінку і певний тег ось так{" "}
+                    <Tag utag={"a"} attrs={`href="about.html#anchor"`}></Tag>
                 </li>
             </ul>
         </Wrapper>
     );
 }
 
-let Wrapper = styled.div`
+let Wrapper = styled(motion.div)`
     display: flex;
     flex-direction: column;
     gap: 1rem;

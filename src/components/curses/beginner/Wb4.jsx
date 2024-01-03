@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import CodeEditor from "@uiw/react-textarea-code-editor";
 import Tag from "./Tag";
+import { motion } from "framer-motion";
+
 
 export default function Wb1() {
     let [code1, setCode1] = useState(
@@ -17,7 +19,11 @@ export default function Wb1() {
     let [img1, setImg1] = useState(100);
     let [img2, setImg2] = useState(100);
     return (
-        <Wrapper>
+        <Wrapper
+            initial={{ opacity: 0, x: "-100%" }}
+            animate={{ opacity: 1, x: "0" }}
+            transition={{ duration: 0.5 }}
+        >
             <Title>4. Графіка і зображення</Title>
             <Start>
                 <img src="/images/simpsom.gif" alt="web structure" />
@@ -203,13 +209,16 @@ export default function Wb1() {
             <h3>Анімовані зображення GIF</h3>
             <div style={{ display: "flex", gap: "2rem" }}>
                 <img src="/images/simpsom.gif" alt="gif" />
-                <p>Так гіфки також можна добавляти на сторінку, вони також можуть бути з прозорим фоном</p>
+                <p>
+                    Так гіфки також можна добавляти на сторінку, вони також
+                    можуть бути з прозорим фоном
+                </p>
             </div>
         </Wrapper>
     );
 }
 
-let Wrapper = styled.div`
+let Wrapper = styled(motion.div)`
     display: flex;
     flex-direction: column;
     gap: 1rem;

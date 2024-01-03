@@ -2,6 +2,7 @@ import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import NotFound from "../../NotFound";
+import { motion } from "framer-motion";
 import Wb1 from "./Wb1";
 import Wb2 from "./Wb2";
 import Wb3 from "./Wb3";
@@ -28,43 +29,36 @@ export default function Beginner() {
             number: 3,
             name: "Списки",
             element: <Wb3 />,
-
         },
         {
             number: 4,
             name: "Графіка зображення",
             element: <Wb4 />,
-
         },
         {
             number: 5,
             name: "Таблиці",
             element: <Wb5 />,
-
         },
         {
             number: 6,
             name: "Форми",
             element: <Wb6 />,
-
         },
         {
             number: 7,
             name: "CSS: Вступ, селектори",
             element: <Wb7 />,
-
         },
         {
             number: 8,
             name: "CSS: Кольори, шрифти",
             element: <Wb8 />,
-
         },
         {
             number: 9,
             name: "Блочна модель",
             element: <Wb9 />,
-
         },
         {
             number: 10,
@@ -72,28 +66,20 @@ export default function Beginner() {
         },
         {
             number: 11,
-            name: "Закріплення знань",
+            name: "Семантичні елементи",
         },
         {
             number: 12,
-            name: "HTML-сайт шапка",
-        },
-        {
-            number: 13,
-            name: "HTML-сайт навігація",
-        },
-        {
-            number: 14,
-            name: "HTML-сайт основна частина",
-        },
-        {
-            number: 15,
-            name: "HTML-сайт завершення, хостинг",
+            name: "Навігація",
         },
     ];
 
     return (
-        <Wrapper>
+        <Wrapper
+            initial={{ opacity: 0, x: "-100%" }}
+            animate={{ opacity: 1, x: "0" }}
+            transition={{ duration: 0.5 }}
+        >
             <Routes>
                 <Route
                     path="/"
@@ -132,7 +118,7 @@ export default function Beginner() {
     );
 }
 
-let Wrapper = styled.div`
+let Wrapper = styled(motion.div)`
     display: flex;
     flex-direction: column;
 `;

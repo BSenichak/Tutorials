@@ -2,10 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import CodeEditor from "@uiw/react-textarea-code-editor";
 import Tag from "./Tag";
+import { motion } from "framer-motion";
 
 export default function Wb1() {
     return (
-        <Wrapper>
+        <Wrapper
+            initial={{ opacity: 0, x: "-100%"}}
+            animate={{ opacity: 1, x: "0"}}
+            transition={{ duration: 0.5 }}
+        >
             <Title>1. Вступ в HTML</Title>
             <Start>
                 <img
@@ -146,9 +151,10 @@ export default function Wb1() {
             <h2>Теги форматування тексту</h2>
             <ol>
                 <li>
-                    <Tag tag={"b"}>Bold</Tag> або <Tag tag={"strong"}>Strong</Tag> ці теги створюють жирний текст. Якщо
-                    ти хочеш, щоб слова були більш виділені або виглядали більш
-                    важливо.
+                    <Tag tag={"b"}>Bold</Tag> або{" "}
+                    <Tag tag={"strong"}>Strong</Tag> ці теги створюють жирний
+                    текст. Якщо ти хочеш, щоб слова були більш виділені або
+                    виглядали більш важливо.
                 </li>
                 <li>
                     <Tag tag={"i"}>Italic</Tag> цей нахиляє текст. Якщо ти
@@ -158,10 +164,12 @@ export default function Wb1() {
                     <Tag tag={"u"}>Underline</Tag> цей підкреслює текст
                 </li>
                 <li>
-                    <Tag tag={"sup"}>Superscript</Tag> цей робить вміст верхнім індексом
+                    <Tag tag={"sup"}>Superscript</Tag> цей робить вміст верхнім
+                    індексом
                 </li>
                 <li>
-                    <Tag tag={"sub"}>Subscript</Tag> цей робить вміст нижнім індексом
+                    <Tag tag={"sub"}>Subscript</Tag> цей робить вміст нижнім
+                    індексом
                 </li>
             </ol>
             <p>
@@ -174,7 +182,7 @@ export default function Wb1() {
     );
 }
 
-let Wrapper = styled.div`
+let Wrapper = styled(motion.div)`
     display: flex;
     flex-direction: column;
     gap: 1rem;

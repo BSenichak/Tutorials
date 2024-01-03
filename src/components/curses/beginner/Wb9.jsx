@@ -3,6 +3,8 @@ import styled from "styled-components";
 import CodeEditor from "@uiw/react-textarea-code-editor";
 import { CssProperty } from "./Css";
 import Tag from "./Tag";
+import { motion } from "framer-motion";
+
 
 export default function Wb1() {
     let [padding, setPadding] = useState(3);
@@ -20,7 +22,11 @@ export default function Wb1() {
     box-shadow: 5px 10px 3px red;
 }`);
     return (
-        <Wrapper>
+        <Wrapper
+            initial={{ opacity: 0, x: "-100%" }}
+            animate={{ opacity: 1, x: "0" }}
+            transition={{ duration: 0.5 }}
+        >
             <Title>9. Блочна модель</Title>
             <h2>
                 <Tag utag={"div"} />
@@ -338,9 +344,20 @@ export default function Wb1() {
                 блокових елементів. Це потужний інструмент для створення
                 візуальних ефектів та підвищення глибини або виділення елементів
                 на сторінці. <br />
-                <CssProperty Key={"box-shadow"} value={"горизонтальний_зсув вертикальний_зсув розм'якшення розмазування колір"}/> <br />
-                <CssProperty Key={"box-shadow"} value={"2px 2px 4px rgba(0, 0, 0, 0.3)"}/> <br />
-                Якщо потрібно щоб тінь падала в середину блока першим параметром ставиться <Code>inset</Code>
+                <CssProperty
+                    Key={"box-shadow"}
+                    value={
+                        "горизонтальний_зсув вертикальний_зсув розм'якшення розмазування колір"
+                    }
+                />{" "}
+                <br />
+                <CssProperty
+                    Key={"box-shadow"}
+                    value={"2px 2px 4px rgba(0, 0, 0, 0.3)"}
+                />{" "}
+                <br />
+                Якщо потрібно щоб тінь падала в середину блока першим параметром
+                ставиться <Code>inset</Code>
             </div>
             <Hsr>
                 <CodeEditor
@@ -364,7 +381,7 @@ export default function Wb1() {
     );
 }
 
-let Wrapper = styled.div`
+let Wrapper = styled(motion.div)`
     display: flex;
     flex-direction: column;
     gap: 1rem;

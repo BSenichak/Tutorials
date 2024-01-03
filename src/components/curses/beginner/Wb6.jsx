@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import CodeEditor from "@uiw/react-textarea-code-editor";
 import Tag from "./Tag";
+import { motion } from "framer-motion";
 
 export default function Wb1() {
     let [code1, setCode1] = useState(
@@ -63,7 +64,11 @@ export default function Wb1() {
       `
     );
     return (
-        <Wrapper>
+        <Wrapper
+            initial={{ opacity: 0, x: "-100%" }}
+            animate={{ opacity: 1, x: "0" }}
+            transition={{ duration: 0.5 }}
+        >
             <Title>6. Форми</Title>
             <Start>
                 <img src="/images/form.gif" alt="web structure" />
@@ -366,7 +371,7 @@ export default function Wb1() {
     );
 }
 
-let Wrapper = styled.div`
+let Wrapper = styled(motion.div)`
     display: flex;
     flex-direction: column;
     gap: 1rem;
