@@ -10,6 +10,7 @@ import Wb5 from "./Wb5";
 import Wb6 from "./Wb6";
 import Wb7 from "./Wb7";
 import Wb8 from "./Wb8";
+import Wb9 from "./Wb9";
 
 export default function Beginner() {
     let lessons = [
@@ -62,6 +63,8 @@ export default function Beginner() {
         {
             number: 9,
             name: "Блочна модель",
+            element: <Wb9 />,
+
         },
         {
             number: 10,
